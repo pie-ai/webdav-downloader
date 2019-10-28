@@ -10,7 +10,7 @@ for PLATFORM in $PLATFORMS; do
         BIN_FILE_NAME="$FILEPATH/${BIN_FILE_NAME_PREFIX}"
         #echo $BIN_FILE_NAME
         if [[ "${GOOS}" == "windows" ]]; then BIN_FILE_NAME="${BIN_FILE_NAME}.exe"; fi
-        CMD="GOOS=${GOOS} GOARCH=${GOARCH} go build -o ${BIN_FILE_NAME}"
+        CMD="GOOS=${GOOS} GOARCH=${GOARCH} go build -o ${BIN_FILE_NAME} main.go"
         #echo $CMD
         echo "${CMD}"
         eval $CMD || FAILURES="${FAILURES} ${PLATFORM}"
