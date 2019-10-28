@@ -28,6 +28,7 @@ build-project:
     - mv $CI_PROJECT_DIR/* $GOPATH/src/$REPO_NAME/
     - cd $GOPATH/src/$REPO_NAME
     - bash build-all.sh $OUTPUT $CI_PROJECT_DIR
+    - find $CI_PROJECT_DIR -type d -empty -delete
     
   artifacts:
     paths:

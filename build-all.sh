@@ -1,6 +1,6 @@
 BIN_FILE_NAME_PREFIX=$1
 PROJECT_DIR=$2
-cd $PROJECT_DIR && go get -t ./...
+go get -t ./...
 PLATFORMS=$(go tool dist list)
 for PLATFORM in $PLATFORMS; do
         GOOS=${PLATFORM%/*}
